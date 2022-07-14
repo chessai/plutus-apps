@@ -28,7 +28,7 @@ simulatorHandlers :: EffectHandlers (Builtin TestContracts) (SimulatorState (Bui
 simulatorHandlers = mkSimulatorHandlers params handler
   where
     params :: Params
-    params = allowBigTransactions $ def { pSlotConfig = def { scSlotLength = 1 } }
+    params = allowBigTransactions def
 
     handler :: SimulatorContractHandler (Builtin TestContracts)
     handler = interpret (contractHandler handleBuiltin)

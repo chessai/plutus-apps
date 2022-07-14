@@ -341,7 +341,7 @@ activateContract = Core.activateContract
 callEndpointOnInstance :: forall a t. (JSON.ToJSON a) => ContractInstanceId -> String -> a -> Simulation t (Maybe NotificationError)
 callEndpointOnInstance = Core.callEndpointOnInstance'
 
--- | Wait 1 second, then add a new block.
+-- | Wait 1 slot length, then add a new block.
 makeBlock ::
     forall t effs.
     ( LastMember IO effs
